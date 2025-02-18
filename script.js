@@ -26,11 +26,15 @@ const server = http.createServer((req, res) => {
       if (err.code === "ENOENT") {
         // File not found (404)
         res.writeHead(404, { "Content-Type": "text/html" });
-        res.end("<h1>404 Not Found</h1><p>The requested file was not found on this server.</p>");
+        res.end(
+          "<h1>404 Not Found</h1><p>The requested file was not found on this server.</p>"
+        );
       } else {
         // Server error
         res.writeHead(500, { "Content-Type": "text/html" });
-        res.end("<h1>500 Internal Server Error</h1><p>Something went wrong.</p>");
+        res.end(
+          "<h1>500 Internal Server Error</h1><p>Something went wrong.</p>"
+        );
       }
     } else {
       // File found, serve it
